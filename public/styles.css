@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/* GLOBAL */
+html {
+  scroll-behavior: smooth;
+  /* A cada 1rem será considerado 10px */
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  /* max-width: 1168px; largura útil + 20 px esq e 20px dir */
+  /*margin: 0 auto;*/
+  background: #FAFAFA;
+  /* padding: 0 2rem 2rem 2rem; */
+  display: flex;
+  justify-content: center;
+}
+
+body, input, button, textarea {
+  font: 400 1.6rem Roboto, sans-serif; /* verificar*/
+}
+
+h1 {
+  font-size: 6.1rem;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 4.9rem;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 3.9rem;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 904px) {
+  html {
+      font-size: 58%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+      font-size: 48%;
+  }
+}
