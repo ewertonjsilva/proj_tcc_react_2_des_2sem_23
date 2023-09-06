@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App() {
+function Produto() {
   return (
     <div>
-      Home do site
+      Tela de Produto
     </div>
   );
 }
 
-export default App;
+export default Produto;
