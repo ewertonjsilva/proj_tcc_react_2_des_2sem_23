@@ -3,10 +3,10 @@ import React from 'react';
 import Header from '../../header/header';
 import Rodape from '../../footer/footer';
 
-function CadUsu() {
+function Contato() {
   return (
     <div>
-      <Header pag={'cadUsu'} />
+      <Header pag={'contato'} />
       <p
         style={{
           margin: '10rem',
@@ -14,11 +14,12 @@ function CadUsu() {
           fontSize: '3rem'
         }}
       >
-        Cadastro de usuário
+        Tela de contato
       </p>
       <Rodape />
     </div>
   );
 }
 
-export default CadUsu;
+export default Contato;
+
