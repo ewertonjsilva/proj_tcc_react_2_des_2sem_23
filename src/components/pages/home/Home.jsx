@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'react-icons/md';
 
@@ -29,19 +29,7 @@ import ic_bebida from '../../../imagens/icones/suco.svg';
 import ic_sobremesa from '../../../imagens/icones/icecream.svg';
 
 function Slider() {
-
-  const [produtos, setProdutos] = useState(
-    [
-      {prd_id: 1, prd_nome: 'Hamburguer de Bacon', prd_img: prod1, prd_valor: 'R$ 21,00', prd_descricao: 'Lanche maravilhoso', prd_unidade: 'un.', img_tp_prod: ic_lanche},
-      {prd_id: 2, prd_nome: 'Combo hamburguer e batata', prd_img: prod2, prd_valor: 'R$ 33,00', descricao: 'Muito delicioso', prd_unidade: 'un.', img_tp_prod: ic_combo},
-      {prd_id: 3, prd_nome: 'Lanche básico', prd_img: prod3, prd_valor: 'R$ 16,00', descricao: 'Para quem come pouco', prd_unidade: 'un.', img_tp_prod: ic_lanche},
-      {prd_id: 4, prd_nome: 'Suco de laranja', prd_img: prod5, prd_valor: 'R$ 8,25', descricao: 'Refrescante', prd_unidade: 'un.', img_tp_prod: ic_bebida},
-      {prd_id: 5, prd_nome: 'Suco verde', prd_img: prod4, prd_valor: 'R$ 12,00', descricao: 'Verdrescante', prd_unidade: 'un.', img_tp_prod: ic_bebida},
-      {prd_id: 6, prd_nome: 'Sorvete', prd_img: prod6, prd_valor: 'R$ 13,00', descricao: 'Um sorvete aleatório', prd_unidade: 'un.', img_tp_prod: ic_sobremesa}
-    ]
-  );
-
-  return(
+  return (
     <Carousel
       className="slider"
       showThumbs={false}
@@ -67,6 +55,18 @@ function Slider() {
 }
 
 function Home() {
+
+  const [produtos, setProdutos] = useState(
+    [
+      { prd_id: 1, prd_nome: 'Hamburguer de Bacon', prd_img: prod1, prd_valor: 'R$ 21,00', prd_descricao: 'Lanche maravilhoso', prd_unidade: 'un.', img_tp_prod: ic_lanche },
+      { prd_id: 2, prd_nome: 'Combo hamburguer e batata', prd_img: prod2, prd_valor: 'R$ 33,00', descricao: 'Muito delicioso', prd_unidade: 'un.', img_tp_prod: ic_combo },
+      { prd_id: 3, prd_nome: 'Lanche básico', prd_img: prod3, prd_valor: 'R$ 16,00', descricao: 'Para quem come pouco', prd_unidade: 'un.', img_tp_prod: ic_lanche },
+      { prd_id: 4, prd_nome: 'Suco de laranja', prd_img: prod5, prd_valor: 'R$ 8,25', descricao: 'Refrescante', prd_unidade: 'un.', img_tp_prod: ic_bebida },
+      { prd_id: 5, prd_nome: 'Suco verde', prd_img: prod4, prd_valor: 'R$ 12,00', descricao: 'Verdrescante', prd_unidade: 'un.', img_tp_prod: ic_bebida },
+      { prd_id: 6, prd_nome: 'Sorvete', prd_img: prod6, prd_valor: 'R$ 13,00', descricao: 'Um sorvete aleatório', prd_unidade: 'un.', img_tp_prod: ic_sobremesa }
+    ]
+  );
+
   return (
     <div>
       <Header pag={'home'} />
@@ -90,66 +90,11 @@ function Home() {
 
       <div class="produtos">
         {/* Alguns produtos */}
-        <CardProd
-          produto={
-            {
-              img:prod1,
-              txtAltImg:'lancheCarneBacon',
-              nome:'Lanche de carne e bacon',
-              valor: '40,00'
-            }
-          }
-        />
-        <CardProd
-          produto={
-            {
-              img:prod2,
-              txtAltImg:'lancheCarneComBatata',
-              nome:'Lanche de carne com batata',
-              valor: '58,00'
-            }
-          }
-        />
-        <CardProd
-          produto={
-            {
-              img:prod3,
-              txtAltImg:'lanchePeixe',
-              nome:'Lanche de peixe',
-              valor: '52,00'
-            }
-          }
-        />
-        <CardProd
-          produto={
-            {
-              img:prod4,
-              txtAltImg:'sucoVerde',
-              nome:'Suco verde',
-              valor: '17,00'
-            }
-          }
-        />
-        <CardProd
-          produto={
-            {
-              img:prod5,
-              txtAltImg:'sucoLaranja',
-              nome:'Suco de Laranja',
-              valor: '15,00'
-            }
-          }
-        />
-        <CardProd
-          produto={
-            {
-              img:prod6,
-              txtAltImg:'sorveteMorango',
-              nome:'Sorvete de morango',
-              valor: '27,00'
-            }
-          }
-        />
+        {
+          produtos.map(prd => {
+            return <CardProd produto={prd} />
+          })
+        }
       </div>
 
       <Rodape />
