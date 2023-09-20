@@ -6,7 +6,7 @@
   justify-content: center;
   max-width: 1128px;
   border-radius: 2rem;
-  width: 96%;
+  /*width: 100%;*/
 }
 
 .rodape p {
@@ -30,4 +30,10 @@
 .rodape .social img {
   width: 4rem;
   margin: 2rem 6rem;
+}
+
+@media screen and (max-width: 480px) {
+  .rodape .social img {
+      margin: 2rem 4rem;
+  }
 }

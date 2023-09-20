@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'react-icons/md';
 
-import './Home.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import './Home.css';
 
 import Header from '../../header/header';
 import Rodape from '../../footer/footer';
@@ -23,7 +23,24 @@ import prod4 from '../../../imagens/temp/suco2.jpg';
 import prod5 from '../../../imagens/temp/suco-laranja.jpg';
 import prod6 from '../../../imagens/temp/sorvete.jpg';
 
+import ic_lanche from '../../../imagens/icones/lanche.svg';
+import ic_combo from '../../../imagens/icones/todos.svg';
+import ic_bebida from '../../../imagens/icones/suco.svg';
+import ic_sobremesa from '../../../imagens/icones/icecream.svg';
+
 function Slider() {
+
+  const [produtos, setProdutos] = useState(
+    [
+      {prd_id: 1, prd_nome: 'Hamburguer de Bacon', prd_img: prod1, prd_valor: 'R$ 21,00', prd_descricao: 'Lanche maravilhoso', prd_unidade: 'un.', img_tp_prod: ic_lanche},
+      {prd_id: 2, prd_nome: 'Combo hamburguer e batata', prd_img: prod2, prd_valor: 'R$ 33,00', descricao: 'Muito delicioso', prd_unidade: 'un.', img_tp_prod: ic_combo},
+      {prd_id: 3, prd_nome: 'Lanche básico', prd_img: prod3, prd_valor: 'R$ 16,00', descricao: 'Para quem come pouco', prd_unidade: 'un.', img_tp_prod: ic_lanche},
+      {prd_id: 4, prd_nome: 'Suco de laranja', prd_img: prod5, prd_valor: 'R$ 8,25', descricao: 'Refrescante', prd_unidade: 'un.', img_tp_prod: ic_bebida},
+      {prd_id: 5, prd_nome: 'Suco verde', prd_img: prod4, prd_valor: 'R$ 12,00', descricao: 'Verdrescante', prd_unidade: 'un.', img_tp_prod: ic_bebida},
+      {prd_id: 6, prd_nome: 'Sorvete', prd_img: prod6, prd_valor: 'R$ 13,00', descricao: 'Um sorvete aleatório', prd_unidade: 'un.', img_tp_prod: ic_sobremesa}
+    ]
+  );
+
   return(
     <Carousel
       className="slider"
