@@ -1,0 +1,17 @@
+.rodape {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1128px;
+  border-radius: 2rem;
+  /*width: 100%;*/
+}
+
+.rodape p {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  color: #B71C1C;
+}
+
