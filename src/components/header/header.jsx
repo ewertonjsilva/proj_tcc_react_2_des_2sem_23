@@ -10,7 +10,7 @@ function Cabecalho({ pag }) {
     <header>
       <nav className="containerNav">
         <div className="menu">
-          <div>
+          <div className="containerLogo">
             <MdFastfood className="icon" id="logo" />
             <label for="" id="titulo">BomBurguer</label>
           </div>
@@ -22,8 +22,8 @@ function Cabecalho({ pag }) {
             <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>
           </div>
           <div className="menuMobile">
-            <a href="#" className="icon" id="mIco">
-              <MdMenu className="icon" id="logo" />
+            <a href="#">
+              <MdMenu className="icon"/>
             </a>
           </div>
         </div>

@@ -15,12 +15,17 @@ header {
 }
 
 .containerNav .menu {
-  max-width: 1168px; /* largura útil + 20 px esq e 20px dir; */
+  max-width: 1168px;
+  /* largura útil + 20 px esq e 20px dir; */
   height: 8.0rem;
   padding: 0.3rem 2rem 0.4rem 2rem;
   font-size: 4.4rem;
   align-items: center;
   justify-content: center;
+  display: flex;
+}
+
+.containerLogo {
   display: flex;
 }
 
@@ -70,5 +75,26 @@ header {
 
 .containerNav .menu .menuMobile {
   display: none;
+}
+
+.containerNav .menu .menuMobile a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 940px) {
+  .containerNav .menu .menuMobile {
+    display: flex;
+  }
+
+  .containerNav .menu .menuGrande {
+    display: none;
+  }
+
+  .containerNav .menu {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
