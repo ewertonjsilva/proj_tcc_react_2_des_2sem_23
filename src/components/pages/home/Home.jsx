@@ -8,7 +8,7 @@ import './Home.css';
 function Home() {
   return (
     <div className='centraliza'>
-      <Cabecalho />
+      <Cabecalho pag={'home'} />
       Home do site
       <Rodape />
     </div>

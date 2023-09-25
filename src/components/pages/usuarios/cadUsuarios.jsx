@@ -6,7 +6,7 @@ import Rodape from '../../footer/footer';
 function CadUsuarios() {
   return (
     <div className='centraliza'>
-      <Cabecalho />
+      <Cabecalho pag={'cadUsu'} />
       Tela de Cadastro Usuarios
       <Rodape />
     </div>

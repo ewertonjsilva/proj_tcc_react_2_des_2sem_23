@@ -6,7 +6,7 @@ import Rodape from '../../footer/footer';
 function Login() {
   return (
     <div className='centraliza'>
-      <Cabecalho />
+      <Cabecalho pag={'login'} />
       Tela de login
       <Rodape />
     </div>

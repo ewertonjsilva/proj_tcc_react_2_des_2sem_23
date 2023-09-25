@@ -68,3 +68,7 @@ header {
   color: #FAFAFA;
 }
 
+.containerNav .menu .menuMobile {
+  display: none;
+}
+

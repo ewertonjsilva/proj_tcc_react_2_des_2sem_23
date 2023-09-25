@@ -6,7 +6,7 @@ import Rodape from '../../footer/footer';
 function Contato() {
   return (
     <div className='centraliza'>
-      <Cabecalho />
+      <Cabecalho pag={'contato'} />
       Tela de Contato
       <Rodape />
     </div>

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import './header.css';
 
-function Cabecalho() {
+function Cabecalho({ pag }) {
   return (
     <header>
       <nav className="containerNav">
@@ -15,11 +15,16 @@ function Cabecalho() {
             <label for="" id="titulo">BomBurguer</label>
           </div>
           <div className="menuGrande">
-            <Link to='/'>Home</Link>
-            <Link to='/listprod'>Produtos</Link>
-            <Link to='/cadusu'>Cadastrar</Link>
-            <Link to='/contato'>Contato</Link>
-            <Link to='/login'>Login</Link>
+            <Link to='/' className={pag === 'home' ? 'active' : ''}>Home</Link>
+            <Link to='/listprod' className={pag === 'produtos' ? 'active' : ''}>Produtos</Link>
+            <Link to='/cadusu' className={pag === 'cadUsu' ? 'active' : ''}>Cadastrar</Link>
+            <Link to='/contato' className={pag === 'contato' ? 'active' : ''}>Contato</Link>
+            <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>
+          </div>
+          <div className="menuMobile">
+            <a href="#" className="icon" id="mIco">
+              <MdMenu className="icon" id="logo" />
+            </a>
           </div>
         </div>
       </nav>
