@@ -6,6 +6,7 @@ header {
 
 .containerNav {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #FAFAFA;
@@ -81,6 +82,39 @@ header {
   display: flex;
   height: 100%;
   width: 100%;
+}
+
+.containerNav .menuMobileExpandidos {
+  width: 100%;
+}
+
+.containerNav .menuMobileExpandidos a {
+  border: 0.4rem solid #FAFAFA;
+  height: 4rem;
+  background-color: #FAFAFA;
+  color: #B71C1C;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.containerNav .menuMobileExpandidos a:hover {
+  border: 0.4rem solid #F05545;
+  color: #F05545;
+}
+
+.containerNav .menuMobileExpandidos a.active {
+  background-color: #B71C1C;
+  border: 0.4rem solid #B71C1C;
+  color: #FAFAFA;
+}
+
+.containerNav .menuMobileExpandidon {
+  display: none;
 }
 
 @media screen and (max-width: 940px) {
