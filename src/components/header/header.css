@@ -8,7 +8,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   background-color: #FAFAFA;
   color: #B71C1C;
   border-bottom: 0.4rem solid #B71C1C;
@@ -19,11 +19,12 @@ header {
   max-width: 1440px;
   /* largura útil + 20 px esq e 20px dir; */
   height: 8.0rem;
+  width: 98%;
   padding: 0.3rem 2rem 0.4rem 2rem;
   font-size: 4.4rem;
   display: flex;
   align-items: center;
-  justify-content: stretch;  
+  justify-content: space-between;
 }
 
 .containerLogo {

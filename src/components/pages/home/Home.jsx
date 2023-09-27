@@ -20,7 +20,9 @@ function Home() {
       <Cabecalho pag={'home'} />
       <Slider />
       <main className="principal">
-        <img className="imagemLocal" src={local} alt="Imagem do local" />
+        <div className='tamImgLocal'>
+          <img className="imagemLocal" src={local} alt="Imagem do local" />
+        </div>
         <div>
           <h2>Bem-vindo à Lanchonete Bom burguer</h2>
           <h3>Onde Sabor e Conveniência Se Encontram</h3>

@@ -1,32 +1,39 @@
 .slider {
-    margin: 1rem auto;
-    width: 100%;
-    max-width: 1440px;
+  margin: 1rem auto;
+  width: 98%;
+  max-width: 1440px;
 }
 
 .carousel {
-    text-align: center;
+  text-align: center;
 }
 
 .principal {
-    margin: 1rem auto;
-    /* height: 28.5rem;  */
-    width: 98%;
-    max-width: 1440px;
-    /* padding: 0 2rem 0 2rem;  */
-    border: 0.4rem solid #B71C1C;
-    border-radius: 2rem;
-    /* overflow: hidden; */
-    display: flex;
-  }
-  
-  .imagemLocal {
-    width: 50%;
-    border-radius: 2rem;
-    margin: 1rem;
-  }
-  
-  .principal p {
-    font-size: 2rem;
-    margin: 1rem;
-  }
+  margin: 1rem auto;
+  /* height: 28.5rem;  */
+  width: 98%;
+  max-width: 1440px;
+  /* padding: 0 2rem 0 2rem;  */
+  border: 0.4rem solid #B71C1C;
+  border-radius: 2rem;
+  /* overflow: hidden; */
+  display: flex;
+}
+
+.tamImgLocal {
+  display: flex;
+  max-width: 50%;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.imagemLocal {
+  max-width: 100%;
+  width: auto;
+}
+
+.principal p {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
