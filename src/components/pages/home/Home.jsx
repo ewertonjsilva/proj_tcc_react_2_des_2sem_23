@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'react-icons/md';
 
 import Cabecalho from '../../header/header';
 import Rodape from '../../footer/footer';
@@ -18,17 +19,27 @@ function Home() {
   return (
     <div className='centraliza'>
       <Cabecalho pag={'home'} />
+
       <Slider />
+
       <main className="principal">
         <div className='tamImgLocal'>
           <img className="imagemLocal" src={local} alt="Imagem do local" />
         </div>
         <div>
-          <h2>Bem-vindo à Lanchonete Bom burguer</h2>
-          <h3>Onde Sabor e Conveniência Se Encontram</h3>
+          <h3>Lanchonete BomBurguer onde Sabor e Conveniência Se Encontram</h3>
           <p>Na Lanchonete Sabor & Prazer, estamos comprometidos em satisfazer seus desejos gastronômicos de todas as formas possíveis. Se você está procurando uma refeição deliciosa para desfrutar no conforto da sua casa, ou se deseja um ambiente aconchegante para saborear nossos pratos frescos e suculentos, você está no lugar certo!</p>
         </div>
       </main>
+
+      <div class="tipos">
+        <MdLunchDining className="tpicon" />
+        <MdLocalBar className="tpicon" />
+        <MdDining className="tpicon" />
+        <MdIcecream className="tpicon" />
+        <MdFastfood className="tpicon" />
+      </div>
+
       <Rodape />
     </div>
   );
