@@ -36,10 +36,55 @@ function Home() {
         prd_id: 1,
         prd_nome: 'Hamburguer de Bacon',
         prd_img: prod1,
-        prd_valor: 21.00,
+        prd_valor: '21.00',
         prd_descricao: 'Lanche maravilhoso',
         prd_unidade: 'un.',
         img_tp_prod: ic_lanche
+      },
+      {
+        prd_id: 2,
+        prd_nome: 'Combo hamburguer e batata',
+        prd_img: prod2,
+        prd_valor: '33.00',
+        prd_descricao: 'Muito delicioso',
+        prd_unidade: 'un.',
+        img_tp_prod: ic_combo
+      },
+      {
+        prd_id: 3,
+        prd_nome: 'Lanche básico',
+        prd_img: prod3,
+        prd_valor: '16.00',
+        prd_descricao: 'Para quem come pouco',
+        prd_unidade: 'un.',
+        img_tp_prod: ic_lanche
+      },
+      {
+        prd_id: 4,
+        prd_nome: 'Suco de laranja',
+        prd_img: prod4,
+        prd_valor: '8.25',
+        prd_descricao: 'Refrescante',
+        prd_unidade: 'copo',
+        img_tp_prod: ic_bebida
+      },
+      {
+        prd_id: 5,
+        prd_nome: 'Suco verde',
+        prd_img: prod5,
+        prd_valor: '12.00',
+        prd_descricao: 'Verdrescante',
+        prd_unidade: 'copo',
+        img_tp_prod: ic_bebida
+      },
+      {
+        prd_id: 6,
+        prd_nome: 'Sorvete',
+        prd_img: prod1,
+        prd_valor: '13.00',
+        prd_descricao: 'Um sorvete aleatório',
+        prd_unidade: 'taça',
+        img_tp_prod: ic_sobremesa
       },
     ]
   );
@@ -69,24 +114,13 @@ function Home() {
       </div>
 
       <div className='produtos'>
-        <CardProd
-          produto={
-            {
-              prd_nome: 'Hamburguer de Bacon',
-              prd_img: prod1,
-              prd_valor: 'R$ 21,00'
+        {
+          produtos.map(
+            prd => {
+              return <CardProd produto={prd} />
             }
-          }
-        />
-        <CardProd
-          produto={
-            {
-              prd_nome: 'Combo hamburguer e batata',
-              prd_img: prod2,
-              prd_valor: 'R$ 33,00'
-            }
-          }
-        />
+          )
+        }
       </div>
 
       <Rodape />
