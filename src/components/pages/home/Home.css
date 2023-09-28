@@ -42,7 +42,7 @@
   background-color: #B71C1C;
   display: flex;
   justify-content: center;
-  max-width: 1440px; 
+  max-width: 1440px;
   width: 98%;
   border-radius: 2rem;
 }
@@ -51,6 +51,15 @@
   font-size: 4rem;
   margin: 2rem 6rem;
   cursor: pointer;
+}
+
+.produtos {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
+  border-radius: 2rem;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 768px) {
