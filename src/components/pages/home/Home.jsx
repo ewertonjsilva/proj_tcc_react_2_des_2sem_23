@@ -80,7 +80,7 @@ function Home() {
       {
         prd_id: 6,
         prd_nome: 'Sorvete',
-        prd_img: prod1,
+        prd_img: prod6,
         prd_valor: '13.00',
         prd_descricao: 'Um sorvete aleatório',
         prd_unidade: 'taça',
