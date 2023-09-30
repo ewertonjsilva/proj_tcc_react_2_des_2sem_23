@@ -117,7 +117,7 @@ function Home() {
         {
           produtos.map(
             prd => {
-              return <CardProd produto={prd} />
+              return <CardProd produto={prd} key={prd.prd_id} />
             }
           )
         }
