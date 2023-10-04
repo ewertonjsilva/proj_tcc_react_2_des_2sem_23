@@ -29,6 +29,8 @@ header {
 
 .containerLogo {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .containerNav .menu .icon {
@@ -38,9 +40,11 @@ header {
   /* margin: 0 2rem */
 }
 
-#titulo {
+#nome {
   user-select: none;
   margin: 0 1rem;
+  font-size: 4rem;
+  font-weight: bold;
 }
 
 .containerNav .menu .menuGrande {

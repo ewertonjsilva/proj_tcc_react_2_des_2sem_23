@@ -1,10 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './cardProduto.css';
 
 function CardProduto({ produto }) {
+
+  let navigate = useNavigate();
+
+  function visualizaProd() {
+    navigate('/produto', { state: produto });
+  }
+
   return (
-    <div className='cardProd'>
+    <div className='cardProd' onClick={() => visualizaProd()}>
       <div className='controlImgProd'>
         <img src={produto.prd_img} alt={produto.prd_nome} />
       </div>

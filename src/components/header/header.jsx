@@ -23,7 +23,7 @@ function Cabecalho({ pag }) {
         <div className="menu">
           <div className="containerLogo">
             <MdFastfood className="icon" id="logo" />
-            <label htmlFor="logo" id="titulo">BomBurguer</label>
+            <label htmlFor="logo" id="nome">BomBurguer</label>
           </div>
           <div className="menuGrande">
             <Link to='/' className={pag === 'home' ? 'active' : ''}>Home</Link>
