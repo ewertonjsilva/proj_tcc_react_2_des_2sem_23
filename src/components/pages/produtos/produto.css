@@ -3,53 +3,62 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border: solid 0.5rem #7F0000;
-  margin: 0 auto;
+  border: solid 0.5rem #B71C1C;
+  margin: 1rem auto;
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 2rem;
   color: #7F0000;
-  width: 92%;
-  max-width: 1100px;
+  width: 95%;
+  max-width: 1410px;
+  height: 70vh;
 }
 
-.produtos .cardProd {
-  width: 30%;
-  height: 25rem;
-  display: flex;
+.container .containerItem {
+  display: flex; 
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0.4rem solid #B71C1C;
+  width: 100%;
+  padding: 1rem; 
+}
+
+.container .containerItem .imagemProd {
+  max-width: 100%;
+  width: auto;
   border-radius: 2rem;
-  overflow: hidden;
-  background-color: #B71C1C;
-  margin: 1rem 1rem;
+  max-height: 70vh;
 }
 
-.container .icon {
-  font-size: 3rem;
-}
-
-#titulo {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.container .titulo {
+.container .containerItem .titulo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-#valor {
-  font-size: 2rem;
+#titulo {
+  font-size: 4rem;
+  font-weight: bold;
 }
 
-.container img {
-  width: 50%;
-  border-radius: 2rem;
+.container .containerItem .titulo .icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.container .containerItem .descricao {
+  font-size: 3rem;
+}
+
+#valor {
+  font-size: 2.5rem;
+}
+
+.container .containerItem .comprar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1rem;
 }
 
 .container span {
@@ -58,16 +67,8 @@
   text-align: center;
 }
 
-.comprar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 1rem;
-}
-
-.comprar span {
-  font-size: 1.6rem;
+.container .containerItem .comprar span {
+  font-size: 2rem;
   height: 2.5rem;
   display: flex;
   align-items: center;
@@ -75,7 +76,7 @@
   border: solid #FAFAFA 0.2rem;
 }
 
-.comprar input {
+.container .containerItem .comprar input {
   height: 2.5rem;
   width: 4rem;
   border: solid #7F0000 0.1rem;
@@ -84,7 +85,7 @@
   text-align: center;
 }
 
-.comprar button {
+.container .containerItem .comprar button {
   height: 5rem;
   display: flex;
   flex-wrap: wrap;
@@ -100,19 +101,16 @@
   font-size: 1.6rem;
 }
 
-.comprar button:hover {
+.container .containerItem .comprar button:hover {
   background-color: #F05545;
 }
 
-.comprar p {
+.container .containerItem .comprar p {
   width: 50%;
 }
 
-.descricao {
-  font-size: 1.6rem;
-}
 
-.comprar button img {
+.container .containerItem .comprar button img {
   height: 4rem;
   width: 3rem;
 
@@ -121,5 +119,10 @@
 @media screen and (max-width: 767px) {
   .container {
       flex-direction: column;
+      height: auto;
+  }
+  .imagemProd {
+    max-height: none;
   }
 }
+
