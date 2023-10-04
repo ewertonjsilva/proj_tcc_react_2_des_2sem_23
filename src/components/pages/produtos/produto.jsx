@@ -11,16 +11,23 @@ import './produto.css'
 function Produto() {
 
   const location = useLocation();
-  /* 
-    Usar state para receber produto, pois ao diminiur o tamanho da tela, 
-    ao acionar o menu, a renderização de tela é necessária e com isso o produto
-    armazenado pela navegação é perdido, gerando erro
-  */
- const [itemCarregado, setItemCarregado] = useState({});
+
+  const [itemCarregado, setItemCarregado] = useState({});
+  const [qtd, setQtd] = useState(1);
+  const [total, setTotal] = useState(0.00);
 
   useEffect(() => {
     setItemCarregado(location.state);
+    setTotal(location.state.prd_valor);
   }, []);
+
+
+  function handleAtlQtdVlr(nvVlr) {
+    let totalTemp;
+    setQtd(nvVlr);
+    totalTemp = nvVlr * total;
+    setTotal(totalTemp.toFixed(2));
+  }
 
   return (
     <>
@@ -30,21 +37,21 @@ function Produto() {
         <div className='containerItem'>
           <img
             className='imagemProd'
-            src={location.state.prd_img}
-            alt={"Imagem " + location.state.prd_nome}
+            src={itemCarregado.prd_img}
+            alt={"Imagem " + itemCarregado.prd_nome}
           />
         </div>
         <div className='containerItem'>
           <div className="titulo">
             <span id="titulo">{itemCarregado.prd_nome}</span>
-            <img src={location.state.img_tp_prod} className="icon" alt={location.state.img_tp_prod} />
+            <img src={itemCarregado.img_tp_prod} className="icon" alt={itemCarregado.img_tp_prod} />
           </div>
-          <span className="descricao">{location.state.prd_descricao}</span>
-          <span id="valor">{'R$ ' + location.state.prd_valor}</span>
+          <span className="descricao">{itemCarregado.prd_descricao}</span>
+          <span id="valor">{'R$ ' + itemCarregado.prd_valor}</span>
           <div className="comprar">
             <span>Quantidade</span>
-            <input type="number" placeholder="1" />
-            <span>Valor R$ 99,99</span>
+            <input value={qtd} onChange={(nvVlr) => handleAtlQtdVlr(nvVlr.target.value)} type="number" />
+            <span>Total R$ {total}</span>
             <button>
               <p>Inserir no carrinho</p>
               <img src={carrinho} alt="adicionar" />
