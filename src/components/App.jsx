@@ -8,7 +8,8 @@ import Login from './pages/usuarios/login';
 import CadProd from './pages/produtos/cadProduto';
 import ListProd from './pages/produtos/listarProdutos';
 import VerProd from './pages/produtos/produto'; 
-import Contato from './pages/contato/contato';
+import Contato from './pages/contato/contato'; 
+import Carrinho from './pages/carrinho/carrinho';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Route path='/cadprod' element={<CadProd />} />
         <Route path='/listprod' element={<ListProd />} />
         <Route path='/produto' element={<VerProd />} />
-        <Route path='/contato' element={<Contato />} />
+        <Route path='/contato' element={<Contato />} /> 
+        <Route path='/carrinho' element={<Carrinho />} />
       </Routes>
     </BrowserRouter>
   );
