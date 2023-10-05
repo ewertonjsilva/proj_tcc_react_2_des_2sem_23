@@ -24,8 +24,8 @@ function Produto() {
 
   function handleAtlQtdVlr(nvVlr) {
     let totalTemp;
-    setQtd(nvVlr);
-    totalTemp = nvVlr * total;
+    totalTemp = Number((nvVlr === '' ? 1 : nvVlr) * total);
+    setQtd(nvVlr)
     setTotal(totalTemp.toFixed(2));
   }
 
@@ -50,7 +50,11 @@ function Produto() {
           <span id="valor">{'R$ ' + itemCarregado.prd_valor}</span>
           <div className="comprar">
             <span>Quantidade</span>
-            <input value={qtd} onChange={(nvVlr) => handleAtlQtdVlr(nvVlr.target.value)} type="number" />
+            <input
+              type="number"
+              value={qtd}
+              onChange={(nvVlr) => handleAtlQtdVlr(nvVlr.target.value)}
+            />
             <span>Total R$ {total}</span>
             <button>
               <p>Inserir no carrinho</p>
