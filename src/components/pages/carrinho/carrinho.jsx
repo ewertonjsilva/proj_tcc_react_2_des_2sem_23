@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RiDeleteBin6Line, RiAddLine, RiSubtractLine } from "react-icons/ri";
 
@@ -6,10 +6,16 @@ import './carrinho.css';
 
 function Carrinho() {
   const location = useLocation();
-  const produtosCarrinho = location.state;
 
+  const [produtosCarrinho, setProdutosCarrinho] = useState({});
+
+  useEffect(() => {
+    setProdutosCarrinho(location.state);
+  }, []);
+
+  let produtos = location.state;
   // Use a função reduce para somar o valor total
-  const valorTotal = produtosCarrinho.reduce((total, produto) => {
+  const valorTotal = produtos.reduce((total, produto) => {
     // Converta o campo prd_valor para um número (removendo o símbolo de moeda, se houver)
     const valor = parseFloat(produto.prd_valor.replace('$', '').replace(',', '.'));
 
