@@ -13,7 +13,7 @@ function Carrinho() {
 
   const location = useLocation();
 
-  const [produtosCarrinho, setProdutosCarrinho] = useState({});
+  const [produtosCarrinho, setProdutosCarrinho] = useState(location.state);
 
   useEffect(() => {
     setProdutosCarrinho(location.state);
