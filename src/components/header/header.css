@@ -41,10 +41,8 @@ header {
 }
 
 .carrinho {
-  color: #B71C1C;
   font-size: 4.4rem;
   user-select: none;
-  /* margin: 0 2rem */
 }
 
 #nome {

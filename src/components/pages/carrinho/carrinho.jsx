@@ -4,7 +4,13 @@ import { RiDeleteBin6Line, RiAddLine, RiSubtractLine } from "react-icons/ri";
 
 import './carrinho.css';
 
+import Cabecalho from '../../header/header';
+import Rodape from '../../footer/footer';
+
+import imgTemp from '../../../imagens/temp/macarrao.jpg';
+
 function Carrinho() {
+
   const location = useLocation();
 
   const [produtosCarrinho, setProdutosCarrinho] = useState({});
@@ -23,45 +29,52 @@ function Carrinho() {
     return total + produto.quantidade * valor;
   }, 0);
 
-  console.log(location.state);
   return (
     <div className='centraliza'>
+      <Cabecalho pag={'carrinho'} />
+
       <div className='grid'>
         <div className='carrTitulo'>Produto</div>
         <div className='carrTitulo'>Quantidade</div>
         <div className='carrTitulo'>Valor</div>
         <div className='carrTitulo'>Total</div>
       </div>
+
       <div className='grid'>
         <div className='carrProduto'>
           <div className='contImgCarrProd'>
-            <img src={location.state[0].prd_img} alt={location.state[0].prd_img} />
+            <img src={produtosCarrinho[0].prd_img} alt={produtosCarrinho[0].prd_nome} />
           </div>
-          <span>{location.state[0].prd_nome}</span>
+          <span>{produtosCarrinho[0].prd_nome}</span>
           <RiDeleteBin6Line />
         </div>
-        <div className='carrProduto carrQtd'><RiSubtractLine />{location.state[0].quantidade}<RiAddLine /></div>
-        <div className='carrProduto valores'>{location.state[0].prd_valor}</div>
-        <div className='carrProduto valores'>R$ {(location.state[0].quantidade * location.state[0].prd_valor).toFixed(2)}</div>
+        <div className='carrProduto carrQtd'><RiSubtractLine />{produtosCarrinho[0].quantidade}<RiAddLine /></div>
+        <div className='carrProduto valores'>{produtosCarrinho[0].prd_valor}</div>
+        <div className='carrProduto valores'>R$ {(produtosCarrinho[0].quantidade * produtosCarrinho[0].prd_valor).toFixed(2)}</div>
       </div>
+
       <div className='grid'>
         <div className='carrProduto'>
           <div className='contImgCarrProd'>
-            <img src={location.state[1].prd_img} alt={location.state[1].prd_img} />
+            <img src={produtosCarrinho[1].prd_img} alt={produtosCarrinho[1].prd_nome} />
           </div>
-          <span>{location.state[1].prd_nome}</span>
+          <span>{produtosCarrinho[1].prd_nome}</span>
           <RiDeleteBin6Line />
         </div>
-        <div className='carrProduto carrQtd'><RiSubtractLine />{location.state[1].quantidade}<RiAddLine /></div>
-        <div className='carrProduto valores'>{location.state[1].prd_valor}</div>
-        <div className='carrProduto valores'>R$ {(location.state[1].quantidade * location.state[1].prd_valor).toFixed(2)}</div>
+        <div className='carrProduto carrQtd'><RiSubtractLine />{produtosCarrinho[1].quantidade}<RiAddLine /></div>
+        <div className='carrProduto valores'>{produtosCarrinho[1].prd_valor}</div>
+        <div className='carrProduto valores'>R$ {(produtosCarrinho[1].quantidade * produtosCarrinho[1].prd_valor).toFixed(2)}</div>
       </div>
+
       <div className='gridTotal'>
         <div></div>
         <div className='total'>R$ {valorTotal.toFixed(2)}</div>
       </div>
+
+      <Rodape />
     </div>
   );
 }
 
 export default Carrinho;
+

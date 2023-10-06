@@ -62,7 +62,19 @@ function Cabecalho({ pag, addItCar }) {
             <Link to='/cadusu' className={pag === 'cadUsu' ? 'active' : ''}>Cadastrar</Link>
             <Link to='/contato' className={pag === 'contato' ? 'active' : ''}>Contato</Link>
             <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>
-            <Link to='/carrinho' state={carrinho}>{carrinho.length === 0 ? <RiShoppingCart2Line className="carrinho" /> : <RiShoppingCart2Fill className="carrinho" />}</Link>
+            <Link
+              to='/carrinho'
+              state={carrinho}
+              className={pag === 'carrinho' ? 'active' : ''}
+            >
+              {
+                carrinho.length === 0
+                  ?
+                  <RiShoppingCart2Line className='carrinho' />
+                  :
+                  <RiShoppingCart2Fill className='carrinho' />
+              }
+            </Link>
           </div>
           <div className="menuMobile">
             <a href="#" onClick={ativaMenu}>
@@ -76,7 +88,19 @@ function Cabecalho({ pag, addItCar }) {
           <Link to='/cadusu' className={pag === 'cadUsu' ? 'active' : ''}>Cadastrar</Link>
           <Link to='/contato' className={pag === 'contato' ? 'active' : ''}>Contato</Link>
           <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>
-          <Link to='/carrinho' state={carrinho}>{carrinho.length === 0 ? <RiShoppingCart2Line className="carrinho" /> : <RiShoppingCart2Fill className="carrinho" />}</Link>
+          <Link
+            to='/carrinho'
+            state={carrinho}
+            className={pag === 'carrinho' ? 'active' : ''}
+          >
+            {
+              carrinho.length === 0
+                ?
+                <RiShoppingCart2Line className='carrinho' />
+                :
+                <RiShoppingCart2Fill className='carrinho' />
+            }
+          </Link>
         </div>
       </nav>
     </header>
