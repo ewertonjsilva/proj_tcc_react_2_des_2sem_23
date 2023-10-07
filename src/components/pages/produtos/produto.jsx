@@ -5,6 +5,7 @@ import Cabecalho from '../../header/header';
 import Rodape from '../../footer/footer';
 
 import carrinho from '../../../imagens/icones/carrinho.svg';
+import imgTemp from '../../../imagens/temp/macarrao.jpg';
 
 import './produto.css'
 
@@ -15,10 +16,46 @@ function Produto() {
   const [itemCarregado, setItemCarregado] = useState({});
   const [qtd, setQtd] = useState(1);
   const [total, setTotal] = useState(0.00);
+  const [ddSist, setDdSist] = useState(JSON.parse(localStorage.getItem('ddSist')));
 
   useEffect(() => {
     setItemCarregado(location.state);
     setTotal(location.state.prd_valor);
+    const verifDdSist = JSON.parse(localStorage.getItem('ddSist'));
+    if (verifDdSist === null) {
+      localStorage.setItem('ddSist', JSON([
+        {
+          login: {
+            id: 0,
+            nome: '',
+            tipo: ''
+          },
+          carrinho: [{
+            prd_id: 1,
+            prd_nome: 'Hamburguer de Bacon',
+            prd_img: imgTemp,
+            prd_valor: '21.00',
+            prd_descricao: 'Lanche maravilhoso',
+            prd_unidade: 'un.',
+            img_tp_prod: imgTemp,
+            quantidade: 1
+          },
+          {
+            prd_id: 2,
+            prd_nome: 'Combo hamburguer e batata',
+            prd_img: imgTemp,
+            prd_valor: '33.00',
+            prd_descricao: 'Muito delicioso',
+            prd_unidade: 'un.',
+            img_tp_prod: imgTemp,
+            quantidade: 2
+          },]
+        }
+      ]
+      ));
+      setDdSist(JSON.parse(localStorage.getItem('ddSist')));
+    }
+    console.log(ddSist);
   }, []);
 
   function handleAtlQtdVlr(nvVlr) {
@@ -26,6 +63,12 @@ function Produto() {
     totalTemp = Number(nvVlr) * itemCarregado.prd_valor;
     setQtd(Number(nvVlr));
     setTotal(totalTemp.toFixed(2));
+  }
+
+  function handleAddCarrinho() {
+    let tempCarr = localStorage.getItem('ddSist');
+    let tempLog = tempCarr.login;
+    console.log(tempLog);
   }
 
   return (
@@ -56,7 +99,7 @@ function Produto() {
               value={qtd}
             />
             <span>Total R$ {total}</span>
-            <button>
+            <button onClick={() => handleAddCarrinho()}>
               <p>Inserir no carrinho</p>
               <img src={carrinho} alt="adicionar" />
             </button>
