@@ -9,7 +9,7 @@ import imgTemp from '../../imagens/temp/macarrao.jpg';
 
 import './header.css';
 
-function Cabecalho({ pag, addItCar }) {
+function Cabecalho({ pag }) {
 
   const [mobile, setMobile] = useState(false);
   const [carrinho, setCarrinho] = useState(
@@ -45,7 +45,9 @@ function Cabecalho({ pag, addItCar }) {
   }
 
   function addItCar(itens) {
-    setCarrinho(itens);
+    let tempCarr = carrinho;
+    tempCarr.push(itens);
+    setCarrinho(tempCarr);
   }
 
   return (
@@ -57,8 +59,16 @@ function Cabecalho({ pag, addItCar }) {
             <label htmlFor="logo" id="nome">BomBurguer</label>
           </div>
           <div className="menuGrande">
-            <Link to='/' className={pag === 'home' ? 'active' : ''}>Home</Link>
-            <Link to='/listprod' className={pag === 'produtos' ? 'active' : ''}>Produtos</Link>
+            <Link
+              to='/'
+              state={addItCar}
+              className={pag === 'home' ? 'active' : ''}
+            >Home</Link>
+            <Link
+              to='/listprod'
+              state={addItCar}
+              className={pag === 'produtos' ? 'active' : ''}
+            >Produtos</Link>
             <Link to='/cadusu' className={pag === 'cadUsu' ? 'active' : ''}>Cadastrar</Link>
             <Link to='/contato' className={pag === 'contato' ? 'active' : ''}>Contato</Link>
             <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>

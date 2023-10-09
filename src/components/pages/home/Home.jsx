@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom'; // teste
 import { Carousel } from 'react-responsive-carousel';
 import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'react-icons/md';
 
@@ -29,6 +30,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Home.css';
 
 function Home() {
+
+  const location = useLocation(); // teste
 
   const [produtos, setProdutos] = useState(
     [
@@ -117,7 +120,7 @@ function Home() {
         {
           produtos.map(
             prd => {
-              return <CardProd produto={prd} key={prd.prd_id} />
+              return <CardProd produto={prd} key={prd.prd_id} carrinho={location.state.addItCar} />
             }
           )
         }
