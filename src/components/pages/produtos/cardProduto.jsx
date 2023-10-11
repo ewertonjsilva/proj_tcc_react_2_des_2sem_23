@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 import './cardProduto.css';
 
-function CardProduto({ produto }) {
+function CardProduto({ produto, carrinho, addItCarr }) {
 
   let navigate = useNavigate();
 
   function visualizaProd() {
-    navigate('/produto', { state: produto });
+    navigate('/produto', { state: {produto, carrinho} });
   }
 
   return (

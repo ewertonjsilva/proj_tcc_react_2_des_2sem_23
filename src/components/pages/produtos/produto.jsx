@@ -14,11 +14,12 @@ function Produto() {
 
   const [itemCarregado, setItemCarregado] = useState({});
   const [qtd, setQtd] = useState(1);
-  const [total, setTotal] = useState(0.00);
+  const [total, setTotal] = useState(0.00); 
+  let carrinho = location.state.carrinho;
 
   useEffect(() => {
-    setItemCarregado(location.state);
-    setTotal(location.state.prd_valor);
+    setItemCarregado(location.state.produto);
+    setTotal(location.state.produto.prd_valor);
   }, []);
 
   function handleAtlQtdVlr(nvVlr) {
@@ -30,7 +31,7 @@ function Produto() {
 
   return (
     <>
-      <Cabecalho />
+      <Cabecalho carrinho={carrinho} />
 
       <div className="container">
         <div className='containerItem'>

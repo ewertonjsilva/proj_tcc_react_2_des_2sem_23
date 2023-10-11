@@ -32,7 +32,7 @@ function Carrinho() {
   return (
     <div className='centraliza'>
       <Cabecalho pag={'carrinho'} />
-
+      
       <div className='grid'>
         <div className='carrTitulo'>Produto</div>
         <div className='carrTitulo'>Quantidade</div>
