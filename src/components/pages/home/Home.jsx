@@ -89,37 +89,9 @@ function Home() {
     ]
   );
 
-  const [carrinho, setCarrinho] = useState(
-    [
-      {
-        prd_id: 1,
-        prd_nome: 'Hamburguer de Bacon',
-        prd_img: prod1,
-        prd_valor: '21.00',
-        prd_descricao: 'Lanche maravilhoso',
-        prd_unidade: 'un.',
-        img_tp_prod: ic_lanche,
-        quantidade: 1
-      },
-      {
-        prd_id: 2,
-        prd_nome: 'Combo hamburguer e batata',
-        prd_img: prod2,
-        prd_valor: '33.00',
-        prd_descricao: 'Muito delicioso',
-        prd_unidade: 'un.',
-        img_tp_prod: ic_combo,
-        quantidade: 2
-      },
-    ]);
-
-    function addItCarr(it) {
-      setCarrinho(it);
-    }
-
   return (
     <div className='centraliza'>
-      <Cabecalho pag={'home'} carrinho={carrinho} />
+      <Cabecalho pag={'home'} />
 
       <Slider />
 
@@ -145,7 +117,7 @@ function Home() {
         {
           produtos.map(
             prd => {
-              return <CardProd produto={prd} carrinho={carrinho} key={prd.prd_id} />
+              return <CardProd produto={prd} key={prd.prd_id} />
             }
           )
         }

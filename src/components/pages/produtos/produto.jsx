@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Cabecalho from '../../header/header';
 import Rodape from '../../footer/footer';
 
-import carrinho from '../../../imagens/icones/carrinho.svg';
+import carr from '../../../imagens/icones/carrinho.svg';
 
 import './produto.css'
 
@@ -14,12 +14,11 @@ function Produto() {
 
   const [itemCarregado, setItemCarregado] = useState({});
   const [qtd, setQtd] = useState(1);
-  const [total, setTotal] = useState(0.00); 
-  let carrinho = location.state.carrinho;
+  const [total, setTotal] = useState(0.00);
 
   useEffect(() => {
-    setItemCarregado(location.state.produto);
-    setTotal(location.state.produto.prd_valor);
+    setItemCarregado(location.state);
+    setTotal(location.state.prd_valor);
   }, []);
 
   function handleAtlQtdVlr(nvVlr) {
@@ -31,7 +30,7 @@ function Produto() {
 
   return (
     <>
-      <Cabecalho carrinho={carrinho} />
+      <Cabecalho />
 
       <div className="container">
         <div className='containerItem'>
@@ -59,7 +58,7 @@ function Produto() {
             <span>Total R$ {total}</span>
             <button>
               <p>Inserir no carrinho</p>
-              <img src={carrinho} alt="adicionar" />
+              <img src={carr} alt="adicionar" />
             </button>
           </div>
         </div>
