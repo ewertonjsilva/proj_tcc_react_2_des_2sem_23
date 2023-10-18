@@ -21,37 +21,6 @@ font-weight: bold;
 font-size: 2rem;
 }
 
-.grid .carrProduto {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  padding: 1rem;
-}
-
-.grid .carrProduto .contImgCarrProd {
-  width: 20%;
-  height: auto;
-  margin-right: 1rem;
-}
-
-.grid .carrProduto .contImgCarrProd img {
-  width: 100%;
-  height: auto;
-}
-
-.grid .carrProduto span {
-  width: 100%;
-}
-
-.grid .carrQtd {
-  justify-content: space-around;
-}
-
-.grid .valores {
-  justify-content: center;
-}
-
 .gridTotal {
   display: grid;
   width: 100%;

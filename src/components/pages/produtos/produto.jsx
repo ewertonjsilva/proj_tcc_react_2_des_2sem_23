@@ -8,7 +8,7 @@ import carr from '../../../imagens/icones/carrinho.svg';
 
 import './produto.css'
 
-function Produto({ produto, alteraTela }) {
+function Produto({ produto, alteraTela, carrinho, addCarrinho }) {
 
   // const location = useLocation();
 
@@ -26,6 +26,23 @@ function Produto({ produto, alteraTela }) {
     totalTemp = Number(nvVlr) * produto.prd_valor;
     setQtd(Number(nvVlr));
     setTotal(totalTemp.toFixed(2));
+  }
+
+  function handleAddItem() {
+    let itCarrinho = carrinho;
+    let itAdd = {
+      prd_id: produto.prd_id,
+      prd_nome: produto.prd_nome,
+      prd_img: produto.prd_img,
+      prd_valor: produto.prd_valor,
+      prd_descricao: produto.prd_descricao,
+      prd_unidade: produto.prd_unidade,
+      img_tp_prod: produto.img_tp_prod,
+      quantidade: qtd
+    };
+    itCarrinho.push(itAdd);
+    addCarrinho(itCarrinho);
+    alteraTela('carrinho');
   }
 
   return (
@@ -56,7 +73,7 @@ function Produto({ produto, alteraTela }) {
               value={qtd}
             />
             <span>Total R$ {total}</span>
-            <button>
+            <button onClick={() => handleAddItem()}>
               <p>Inserir no carrinho</p>
               <img src={carr} alt="adicionar" />
             </button>
