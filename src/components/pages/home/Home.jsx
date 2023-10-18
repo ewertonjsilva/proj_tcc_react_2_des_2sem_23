@@ -5,6 +5,7 @@ import { MdLunchDining, MdLocalBar, MdDining, MdIcecream, MdFastfood } from 'rea
 import Cabecalho from '../../header/header';
 import Rodape from '../../footer/footer';
 import CardProd from '../produtos/cardProduto';
+import Carrinho from '../carrinho/carrinho';
 
 import promo1 from '../../../imagens/promo1.png';
 import promo2 from '../../../imagens/promo2.png';

@@ -6,6 +6,8 @@ import './carrinho.css';
 
 import Cabecalho from '../../header/header';
 import Rodape from '../../footer/footer';
+import CardProd from '../produtos/cardProduto';
+import Produto from '../produtos/produto';
 
 import prod1 from '../../../imagens/temp/hamburger-bacon.jpg';
 import prod2 from '../../../imagens/temp/hamburger-batata.jpg';
@@ -20,8 +22,6 @@ import ic_bebida from '../../../imagens/icones/suco.svg';
 import ic_sobremesa from '../../../imagens/icones/icecream.svg';
 
 function Carrinho() {
-
-  const location = useLocation();
 
   const [carrinho, setCarrinho] = useState(
     [
@@ -104,5 +104,61 @@ function Carrinho() {
   );
 }
 
-export default Carrinho;
+function ContainerCarrinho({ tela, produtos }) {
+
+  const location = useLocation();
+
+  const [telaCrr, setTelaCrr] = useState(location.state.tela || tela);
+
+  const [carrinho, setCarrinho] = useState(
+    [
+      {
+        prd_id: 1,
+        prd_nome: 'Hamburguer de Bacon',
+        prd_img: prod1,
+        prd_valor: '21.00',
+        prd_descricao: 'Lanche maravilhoso',
+        prd_unidade: 'un.',
+        img_tp_prod: ic_lanche,
+        quantidade: 1
+      },
+      {
+        prd_id: 2,
+        prd_nome: 'Combo hamburguer e batata',
+        prd_img: prod2,
+        prd_valor: '33.00',
+        prd_descricao: 'Muito delicioso',
+        prd_unidade: 'un.',
+        img_tp_prod: ic_combo,
+        quantidade: 2
+      },
+    ]);
+
+  const prodSel = location.state.produto;
+
+  function alteraTela(tl) {
+    setTelaCrr(tl);
+  }
+
+
+  return (
+    <>
+
+      {
+        telaCrr === 'produto' && (
+          <Produto produto={prodSel} alteraTela={alteraTela} carrinho={carrinho} />
+        )
+      }
+
+      {
+        telaCrr === 'carrinho' && (
+          <Carrinho produto={prodSel} alteraTela={alteraTela} carrinho={carrinho} />
+        )
+      }
+
+    </>
+  );
+}
+
+export default ContainerCarrinho;
 

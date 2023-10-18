@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import './header.css';
 
-function Cabecalho({ pag, carrinho }) {
+function Cabecalho({ pag, alteraTela }) {
 
   const [mobile, setMobile] = useState(false);
 
@@ -29,11 +29,17 @@ function Cabecalho({ pag, carrinho }) {
           </div>
           <div className="menuGrande">
             <Link to='/' className={pag === 'home' ? 'active' : ''}>Home</Link>
-            <Link to='/listprod' className={pag === 'produtos' ? 'active' : ''} state={carrinho}>Produtos</Link>
-            <Link to='/cadusu' className={pag === 'cadUsu' ? 'active' : ''} state={carrinho}>Cadastrar</Link>
-            <Link to='/contato' className={pag === 'contato' ? 'active' : ''} state={carrinho}>Contato</Link>
-            <Link to='/login' className={pag === 'login' ? 'active' : ''} state={carrinho}>Login</Link> 
-            <Link to='/carrinho' className={pag === 'carrinho' ? 'active' : ''} state={carrinho}><RiShoppingCart2Line className='carrinho' /></Link>
+            <Link to='/listprod' className={pag === 'produtos' ? 'active' : ''}>Produtos</Link>
+            <Link to='/cadusu' className={pag === 'cadUsu' ? 'active' : ''}>Cadastrar</Link>
+            <Link to='/contato' className={pag === 'contato' ? 'active' : ''}>Contato</Link>
+            <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>
+            {
+              pag === 'produto'
+                ?
+                <div style={{width:'12rem', height:'8rem', display:'flex', justifyContent:'center', alignItems:'center'}}><RiShoppingCart2Line className='carrinho' onClick={() => alteraTela('carrinho')} /></div>
+                :
+                <Link to='/carrinho' className={pag === 'carrinho' ? 'active' : ''} state={{ tela: 'carrinho' }}><RiShoppingCart2Line className='carrinho' /></Link>
+            }
             {/* <Link
               to='/carrinho'
               state={carrinho}
