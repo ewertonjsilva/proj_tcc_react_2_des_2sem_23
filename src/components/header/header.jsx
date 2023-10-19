@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import './header.css';
 
-function Cabecalho({ pag, alteraTela }) {
+function Cabecalho({ pag }) {
 
   const [mobile, setMobile] = useState(false);
 
@@ -33,13 +33,14 @@ function Cabecalho({ pag, alteraTela }) {
             <Link to='/cadusu' className={pag === 'cadUsu' ? 'active' : ''}>Cadastrar</Link>
             <Link to='/contato' className={pag === 'contato' ? 'active' : ''}>Contato</Link>
             <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>
-            {
+            <Link to='/carrinho' className={pag === 'carrinho' ? 'active' : ''}><RiShoppingCart2Line className='carrinho' /></Link>
+            {/* {
               pag === 'produto'
                 ?
                 <div style={{width:'12rem', height:'8rem', display:'flex', justifyContent:'center', alignItems:'center'}}><RiShoppingCart2Line className='carrinho' onClick={() => alteraTela('carrinho')} /></div>
                 :
-                <Link to='/carrinho' className={pag === 'carrinho' ? 'active' : ''} state={{ tela: 'carrinho' }}><RiShoppingCart2Line className='carrinho' /></Link>
-            }
+                <Link to='/carrinho' className={pag === 'carrinho' ? 'active' : ''}><RiShoppingCart2Line className='carrinho' /></Link>
+            } */}
             {/* <Link
               to='/carrinho'
               state={carrinho}

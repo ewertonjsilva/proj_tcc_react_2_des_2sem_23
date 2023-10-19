@@ -14,8 +14,6 @@ import ic_bebida from '../../../imagens/icones/suco.svg';
 import ic_sobremesa from '../../../imagens/icones/icecream.svg';
 
 function ItemCarrinho({ item }) {
-
-
   return (
     <div className='grid'>
       <div className='carrProduto'>

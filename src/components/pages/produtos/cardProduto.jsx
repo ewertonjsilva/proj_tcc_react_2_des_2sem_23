@@ -8,7 +8,7 @@ function CardProduto({ produto }) {
   let navigate = useNavigate();
 
   function visualizaProd() {
-    navigate('/carrinho', { state: {produto, tela: 'produto'} });
+    navigate('/produto', { state: produto });
   }
 
   return (

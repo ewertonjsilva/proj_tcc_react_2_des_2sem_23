@@ -21,7 +21,32 @@ import ic_combo from '../../../imagens/icones/todos.svg';
 import ic_bebida from '../../../imagens/icones/suco.svg';
 import ic_sobremesa from '../../../imagens/icones/icecream.svg';
 
-function Carrinho({ carrinho }) {
+function Carrinho() {
+
+  const [carrinho, setCarrinho] = useState(
+    [
+      {
+        prd_id: 1,
+        prd_nome: 'Hamburguer de Bacon',
+        prd_img: prod1,
+        prd_valor: '21.00',
+        prd_descricao: 'Lanche maravilhoso',
+        prd_unidade: 'un.',
+        img_tp_prod: ic_lanche,
+        quantidade: 1
+      },
+      {
+        prd_id: 2,
+        prd_nome: 'Combo hamburguer e batata',
+        prd_img: prod2,
+        prd_valor: '33.00',
+        prd_descricao: 'Muito delicioso',
+        prd_unidade: 'un.',
+        img_tp_prod: ic_combo,
+        quantidade: 2
+      },
+    ]
+  );
 
   let produtos = carrinho;
   // Use a função reduce para somar o valor total
@@ -35,7 +60,7 @@ function Carrinho({ carrinho }) {
 
   return (
     <div className='centraliza'>
-      <Cabecalho pag={'carrinho'} />
+      <Cabecalho pag={'carrinho'} carrinho={carrinho} />
 
       <div className='grid'>
         <div className='carrTitulo'>Produto</div>
@@ -62,64 +87,60 @@ function Carrinho({ carrinho }) {
   );
 }
 
-function ContainerCarrinho({ tela, produtos }) {
+// function ContainerCarrinho({ tela, produtos }) {
 
-  const location = useLocation();
+//   const location = useLocation();
 
-  const [telaCrr, setTelaCrr] = useState(location.state.tela || tela);
+//   const [telaCrr, setTelaCrr] = useState(location.state.tela || tela);
 
-  const [carrinho, setCarrinho] = useState(
-    [
-      {
-        prd_id: 1,
-        prd_nome: 'Hamburguer de Bacon',
-        prd_img: prod1,
-        prd_valor: '21.00',
-        prd_descricao: 'Lanche maravilhoso',
-        prd_unidade: 'un.',
-        img_tp_prod: ic_lanche,
-        quantidade: 1
-      },
-      {
-        prd_id: 2,
-        prd_nome: 'Combo hamburguer e batata',
-        prd_img: prod2,
-        prd_valor: '33.00',
-        prd_descricao: 'Muito delicioso',
-        prd_unidade: 'un.',
-        img_tp_prod: ic_combo,
-        quantidade: 2
-      },
-    ]);
+//   const [carrinho, setCarrinho] = useState(
+//     [
+//       {
+//         prd_id: 1,
+//         prd_nome: 'Hamburguer de Bacon',
+//         prd_img: prod1,
+//         prd_valor: '21.00',
+//         prd_descricao: 'Lanche maravilhoso',
+//         prd_unidade: 'un.',
+//         img_tp_prod: ic_lanche,
+//         quantidade: 1
+//       },
+//       {
+//         prd_id: 2,
+//         prd_nome: 'Combo hamburguer e batata',
+//         prd_img: prod2,
+//         prd_valor: '33.00',
+//         prd_descricao: 'Muito delicioso',
+//         prd_unidade: 'un.',
+//         img_tp_prod: ic_combo,
+//         quantidade: 2
+//       },
+//     ]);
 
-  const prodSel = location.state.produto;
+//   const prodSel = location.state.produto;
 
-  function alteraTela(tl) {
-    setTelaCrr(tl);
-  }
+//   // function alteraTela(tl) {
+//   //   setTelaCrr(tl);
+//   // }
 
-  function addCarrinho(obj) {
-    setCarrinho(obj);
-  }
+//   return (
+//     <>
 
-  return (
-    <>
+//       {
+//         telaCrr === 'produto' && (
+//           <Produto produto={prodSel} alteraTela={alteraTela} carrinho={carrinho} addCarrinho={addCarrinho} />
+//         )
+//       }
 
-      {
-        telaCrr === 'produto' && (
-          <Produto produto={prodSel} alteraTela={alteraTela} carrinho={carrinho} addCarrinho={addCarrinho} />
-        )
-      }
+//       {
+//         telaCrr === 'carrinho' && (
+//           <Carrinho produto={prodSel} alteraTela={alteraTela} carrinho={carrinho} />
+//         )
+//       }
 
-      {
-        telaCrr === 'carrinho' && (
-          <Carrinho produto={prodSel} alteraTela={alteraTela} carrinho={carrinho} />
-        )
-      }
+//     </>
+//   );
+// }
 
-    </>
-  );
-}
-
-export default ContainerCarrinho;
+export default Carrinho;
 
