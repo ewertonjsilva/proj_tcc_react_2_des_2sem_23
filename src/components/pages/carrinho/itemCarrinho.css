@@ -3,9 +3,6 @@
   width: 100%;
   max-width: 1440px;
   grid-template-columns:40% 20% 20% 20% ;
-  /* border-width: 0.5rem;
-  border-style: solid;
-  border-color: #B71C1C; */
   border-bottom: 0.5rem solid #B71C1C;
   font-size: 1.7rem;
 }
@@ -40,3 +37,4 @@
 .grid .valores {
   justify-content: center;
 }
+

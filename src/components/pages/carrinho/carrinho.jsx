@@ -60,7 +60,8 @@ function Carrinho() {
 
   return (
     <div className='centraliza'>
-      <Cabecalho pag={'carrinho'} carrinho={carrinho} />
+
+      <Cabecalho pag={'carrinho'} />
 
       <div className='grid'>
         <div className='carrTitulo'>Produto</div>

@@ -34,6 +34,7 @@ function Cabecalho({ pag }) {
             <Link to='/contato' className={pag === 'contato' ? 'active' : ''}>Contato</Link>
             <Link to='/login' className={pag === 'login' ? 'active' : ''}>Login</Link>
             <Link to='/carrinho' className={pag === 'carrinho' ? 'active' : ''}><RiShoppingCart2Line className='carrinho' /></Link>
+
             {/* {
               pag === 'produto'
                 ?
