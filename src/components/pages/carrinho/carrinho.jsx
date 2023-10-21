@@ -11,57 +11,52 @@ import Rodape from '../../footer/footer';
 import Produto from '../produtos/produto';
 import ItemCarrinho from './itemCarrinho';
 
-import prod1 from '../../../imagens/temp/hamburger-bacon.jpg';
-import prod2 from '../../../imagens/temp/hamburger-batata.jpg';
-import prod3 from '../../../imagens/temp/lanche1.jpg';
-import prod4 from '../../../imagens/temp/suco-laranja.jpg';
-import prod5 from '../../../imagens/temp/suco2.jpg';
-import prod6 from '../../../imagens/temp/sorvete.jpg';
-
-import ic_lanche from '../../../imagens/icones/lanche.svg';
-import ic_combo from '../../../imagens/icones/todos.svg';
-import ic_bebida from '../../../imagens/icones/suco.svg';
-import ic_sobremesa from '../../../imagens/icones/icecream.svg';
-
 function Carrinho() {
 
-  const [carrinho, setCarrinho] = useState(
-    [
-      {
-        prd_id: 1,
-        prd_nome: 'Hamburguer de Bacon',
-        prd_img: prod1,
-        prd_valor: '21.00',
-        prd_descricao: 'Lanche maravilhoso',
-        prd_unidade: 'un.',
-        img_tp_prod: ic_lanche,
-        quantidade: 1
-      },
-      {
-        prd_id: 2,
-        prd_nome: 'Combo hamburguer e batata',
-        prd_img: prod2,
-        prd_valor: '33.00',
-        prd_descricao: 'Muito delicioso',
-        prd_unidade: 'un.',
-        img_tp_prod: ic_combo,
-        quantidade: 2
-      },
-    ]
-  );
+  // const [carrinho, setCarrinho] = useState(
+  //   [
+  //     {
+  //       prd_id: 1,
+  //       prd_nome: 'Hamburguer de Bacon',
+  //       prd_img: prod1,
+  //       prd_valor: '21.00',
+  //       prd_descricao: 'Lanche maravilhoso',
+  //       prd_unidade: 'un.',
+  //       img_tp_prod: ic_lanche,
+  //       quantidade: 1
+  //     },
+  //     {
+  //       prd_id: 2,
+  //       prd_nome: 'Combo hamburguer e batata',
+  //       prd_img: prod2,
+  //       prd_valor: '33.00',
+  //       prd_descricao: 'Muito delicioso',
+  //       prd_unidade: 'un.',
+  //       img_tp_prod: ic_combo,
+  //       quantidade: 2
+  //     },
+  //   ]
+  // );
 
+  const count = useSelector((state) => state.counter.carrinho);
+  // const dispatch = useDispatch();
+  const [carrinho, setCarrinho] = useState(count);
+  let valor = 0.00;
+  let valorTotal = 0.00;
   let produtos = carrinho;
-  // Use a função reduce para somar o valor total
-  const valorTotal = produtos.reduce((total, produto) => {
+  console.log(carrinho);
+  if (carrinho) {
+    // Use a função reduce para somar o valor total
+  valorTotal = produtos.reduce((total, produto) => {
     // Converta o campo prd_valor para um número (removendo o símbolo de moeda, se houver)
-    const valor = parseFloat(produto.prd_valor.replace('$', '').replace(',', '.'));
+    valor = parseFloat(produto.prd_valor.replace('$', '').replace(',', '.'));
 
     // Multiplique a quantidade pelo valor e adicione ao total
     return total + produto.quantidade * valor;
   }, 0);
+  }
+  
 
-  const count = useSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
 
   return (
     <div className='centraliza'>
@@ -73,12 +68,6 @@ function Carrinho() {
         <div className='carrTitulo'>Quantidade</div>
         <div className='carrTitulo'>Valor</div>
         <div className='carrTitulo'>Total</div>
-      </div>
-      <div className='grid'>
-        <div className='carrTitulo'></div>
-        <div className='carrTitulo'><RiSubtractLine onClick={() => dispatch(decrement())} /></div>
-        <div className='carrTitulo'>{count}</div>
-        <div className='carrTitulo'><RiAddLine onClick={() => dispatch(increment())}/></div>
       </div>
 
       {
