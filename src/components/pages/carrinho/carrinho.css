@@ -2,7 +2,7 @@
   display: grid;
   width: 100%;
   max-width: 1440px;
-  grid-template-columns:40% 20% 20% 20% ;
+  grid-template-columns: 40% 20% 20% 20% ;
   /* border-width: 0.5rem;
   border-style: solid;
   border-color: #B71C1C; */

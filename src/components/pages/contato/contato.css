@@ -1,22 +1,43 @@
+.app{
+  height: 100vh;
+  max-height: 100vh; /* Define a altura máxima para 100% da altura da viewport */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo ultrapassar a altura disponível */
+  /* border: 0.5rem solid #B71C1C; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* max-width: 1440px; */
+}
+
 .grid-principal {
-    display: grid;
-    width: 100%;
-    max-width: 1440px;
-    grid-template-columns:30% 70% ;
-    grid-template-rows: 100%; 
-    border: 0.5rem solid #B71C1C;
-    font-size: 1.7rem; 
-    background-color: #B71C1C;
+  /* display: grid; */
+  width: 100%;
+  max-width: 1440px;
+  /* grid-template-columns: 30% 70%; */
+  /* grid-template-rows: 100%; */
+  border: 0.5rem solid #B71C1C;
+  font-size: 1.7rem;
+  background-color: #B71C1C;
+  /* max-height: 100vh; */
+  /* Define a altura máxima para 100% da altura da viewport */
+  overflow-y: auto;
+  /* Adiciona uma barra de rolagem vertical se o conteúdo ultrapassar a altura disponível */
+  display: flex;
+  max-height: 100%;
 }
 
 .grid-menu {
-    background-color: aqua;
-    /* height: 50rem; */
+  background-color: aqua;
+  height: 70vh;
+  width: 30%;
 }
 
 .grid-pagina {
-    background-color: burlywood;
-    /* height: 50rem; */
+  background-color: burlywood;
+  height: 80%;
+  width: 100%;
 }
 
 /* body {

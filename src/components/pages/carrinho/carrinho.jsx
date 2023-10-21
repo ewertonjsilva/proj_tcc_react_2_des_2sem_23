@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RiDeleteBin6Line, RiAddLine, RiSubtractLine } from "react-icons/ri";
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from '../../../redux/reducers/carrinho';
 
 import './carrinho.css';
 
@@ -58,6 +60,9 @@ function Carrinho() {
     return total + produto.quantidade * valor;
   }, 0);
 
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
   return (
     <div className='centraliza'>
 
@@ -68,6 +73,12 @@ function Carrinho() {
         <div className='carrTitulo'>Quantidade</div>
         <div className='carrTitulo'>Valor</div>
         <div className='carrTitulo'>Total</div>
+      </div>
+      <div className='grid'>
+        <div className='carrTitulo'></div>
+        <div className='carrTitulo'><RiSubtractLine onClick={() => dispatch(decrement())} /></div>
+        <div className='carrTitulo'>{count}</div>
+        <div className='carrTitulo'><RiAddLine onClick={() => dispatch(increment())}/></div>
       </div>
 
       {
